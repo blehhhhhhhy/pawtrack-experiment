@@ -1,0 +1,77 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"><title>Build the bowl, version B, 130 g task</title><style>
+:root{--bg:#F9E7F1;--pri:#C6767B;--ink:#2C0C1E;--tint:#F2CEE2;--surf:#fff;--mut:#4A2C3C;--fed:#BDE8D2;--dis:#E9DFE6}
+*{box-sizing:border-box}[hidden]{display:none!important}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;color-scheme:light}
+body{display:flex;justify-content:center;padding:16px max(16px,env(safe-area-inset-left,0px)) 16px}
+.phone{width:100%;max-width:390px;min-height:820px;display:flex;flex-direction:column;background:var(--bg);border:2px solid var(--ink);border-radius:28px;overflow:hidden}
+.top{display:flex;align-items:center;justify-content:space-between;padding:14px 16px 8px}
+.top .t{text-align:center;line-height:1.2}.top .t b{font-size:17px;display:block}.top .t span{font-size:12.5px;color:var(--mut)}
+.ib{width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);background:#fff;display:flex;align-items:center;justify-content:center;color:var(--ink)}
+.prog{height:6px;margin:0 16px;border-radius:6px;background:var(--tint);overflow:hidden}.prog i{display:block;height:100%;width:62%;background:var(--pri)}
+main{flex:1;padding:16px 20px 0;display:flex;flex-direction:column}
+h1{margin:0;font-size:28px;line-height:1.15}
+.chip{align-self:flex-start;margin-top:8px;padding:3px 12px;border-radius:50px;border:1.5px solid var(--ink);background:var(--tint);font-size:12.5px;font-weight:500}
+.bowlbox{margin-top:12px;height:132px;display:flex;align-items:flex-end;justify-content:center;gap:14px;padding-bottom:26px;background:var(--tint);border:2px solid var(--ink);border-width:2px 4px 4px 2px;border-radius:16px}
+.bowl{position:relative;width:150px;height:76px;border:3px solid var(--ink);border-radius:0 0 76px 76px;background:#fff;overflow:hidden}
+.fill{position:absolute;left:0;right:0;bottom:0;background:#7A2E1A;border-top:5px solid #b5553a;transition:height .25s ease;height:70%}
+.dish{width:70px;height:32px;border:3px solid var(--ink);border-radius:0 0 36px 36px;background:#9AD9EE}
+.lbl{margin:14px 0 6px;font-size:14px;font-weight:600}
+.row{display:flex;flex-wrap:wrap;gap:8px}
+.pill{height:44px;padding:0 18px;border-radius:50px;border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink);background:#fff;color:var(--ink);font:600 15px 'Inter',system-ui,sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.pill[aria-pressed=true]{background:var(--pri)}
+.pill:focus-visible,.next:focus-visible,input[type=range]:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.sw{width:13px;height:13px;border-radius:50%;border:1.5px solid var(--ink)}
+.cust{display:flex;align-items:center;gap:8px;margin-top:10px}.cust label{font-size:13.5px;font-weight:600}.cust input{width:96px;height:44px;padding:0 12px;border-radius:12px;border:2px solid var(--ink);background:#fff;color:var(--ink);font:600 16px 'Inter',system-ui,sans-serif}.cust span{font-weight:600}.cust input:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.time{display:flex;align-items:center;gap:6px;margin-top:14px;font-size:13px;color:var(--mut)}
+.sp{flex:1;min-height:12px}
+.next{margin:0 0 22px;height:54px;border-radius:50px;border:2px solid var(--ink);background:var(--pri);color:var(--ink);font:600 16px 'Inter',system-ui,sans-serif;display:flex;align-items:center;justify-content:center;text-decoration:none}
+.sl{position:relative;padding:4px 10px 0}
+.read{font-size:15px;font-weight:700;margin-bottom:6px}
+input[type=range]{width:100%;margin:0;height:44px;background:transparent;-webkit-appearance:none;appearance:none}
+input[type=range]::-webkit-slider-runnable-track{height:10px;border-radius:10px;background:#fff;border:2px solid var(--ink)}
+input[type=range]::-moz-range-track{height:10px;border-radius:10px;background:#fff;border:2px solid var(--ink)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;margin-top:-11px;border-radius:50%;background:var(--pri);border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink)}
+input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:var(--pri);border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink)}
+.marks{position:relative;height:42px;margin:-4px 15px 0}
+.mk{position:absolute;top:0;transform:translateX(-50%);text-align:center;font-size:11px;line-height:1.25;font-weight:600;white-space:nowrap}
+.mk:before{content:"";display:block;width:2px;height:9px;margin:0 auto 2px;background:var(--ink)}
+.mk span{display:block;font-weight:400;color:var(--mut)}
+</style></head><body><div class="phone">
+<div class="top"><span class="ib"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></span><div class="t"><b>Log a feed</b><span>Mochi, Hall bicycle shelter</span></div><span class="ib"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span></div>
+<div class="prog"><i></i></div>
+<main><h1>Build the bowl</h1>
+<div class="chip">Same as your last feed. Change anything you like.</div>
+<div class="bowlbox"><div class="bowl"><div class="fill" id="fill" style="height:70%"></div></div><div class="dish"></div></div>
+<p class="lbl">1. Amount</p>
+<div class="sl"><div class="read" id="read" aria-live="polite">85 g (1 pouch)</div>
+<input id="slider" type="range" min="0" max="250" step="1" value="85" aria-label="Amount of food in grams">
+<div class="marks" aria-hidden="true">
+<div class="mk" style="left:16.8%">½ pouch<span>42 g</span></div>
+<div class="mk" style="left:34%">1 pouch<span>85 g</span></div>
+<div class="mk" style="left:68%">2 pouches<span>170 g</span></div>
+</div></div>
+<p class="lbl">2. Food</p>
+<div class="row" id="food">
+<button type="button" class="pill" aria-pressed="false"><span class="sw" style="background:#F0B44C"></span>Dry</button>
+<button type="button" class="pill" aria-pressed="true"><span class="sw" style="background:#7A2E1A"></span>Wet</button>
+<button type="button" class="pill" aria-pressed="false"><span class="sw" style="background:linear-gradient(90deg,#F0B44C 50%,#7A2E1A 50%)"></span>Mixed</button>
+<button type="button" class="pill" aria-pressed="false"><span class="sw" style="background:#9AA0A6"></span>Other</button>
+</div>
+<p class="lbl">3. Water</p>
+<div><button type="button" class="pill" id="water" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.3 6 10.5a6 6 0 0 1-12 0C6 9.3 12 3 12 3z"/></svg>Water provided</button></div>
+<div class="time">Time: Today, 7:42pm (filled in for you)</div>
+<div class="sp"></div>
+<a class="next" id="next" href="next-b-130.html">Next</a>
+</main></div><script>
+function fh(v){v=+v||0;var p=v<=42?8+v*32/42:v<=85?40+(v-42)*30/43:v<=170?70+(v-85)*25/85:95+(v-170)*0.05;return Math.max(8,Math.min(98,p))+'%'}
+var fill=document.getElementById('fill'),s=document.getElementById('slider'),r=document.getElementById('read');
+var M=[[42,'1/2 pouch'],[85,'1 pouch'],[170,'2 pouches']];
+function upd(){var v=+s.value;for(var i=0;i<M.length;i++){if(Math.abs(v-M[i][0])<=5){v=M[i][0];s.value=v}}
+var n='';for(var j=0;j<M.length;j++){if(M[j][0]===v)n=' ('+M[j][1]+')'}
+r.textContent=v+' g'+n;fill.style.height=fh(v)}
+s.addEventListener('input',upd);upd();
+
+document.querySelectorAll('#food .pill').forEach(function(b){b.addEventListener('click',function(){
+document.querySelectorAll('#food .pill').forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true')})});
+var w=document.getElementById('water');w.addEventListener('click',function(){w.setAttribute('aria-pressed',w.getAttribute('aria-pressed')==='true'?'false':'true')});
+</script></body></html>
