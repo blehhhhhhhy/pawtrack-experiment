@@ -75,4 +75,6 @@ gi.addEventListener('input',function(){fill.style.height=fh(gi.value)});
 document.querySelectorAll('#food .pill').forEach(function(b){b.addEventListener('click',function(){
 document.querySelectorAll('#food .pill').forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true')})});
 var w=document.getElementById('water');w.addEventListener('click',function(){w.setAttribute('aria-pressed',w.getAttribute('aria-pressed')==='true'?'false':'true')});
+
+(function(){var T0=Date.now(),LO=125,HI=135,ok='next-a-130.html',bad='wrong-a-130.html';function amount(){var p=document.querySelector('#amt .pill[aria-pressed=true]');if(!p)return NaN;return p.dataset.g==='custom'?parseFloat(gi.value):+p.dataset.g;}function food(){var b=document.querySelector('#food .pill[aria-pressed=true]');return b?b.textContent.trim().toLowerCase():'none'}document.getElementById('next').addEventListener('click',function(e){e.preventDefault();var g=amount(),good=isFinite(g)&&g>=LO&&g<=HI;var q='?g='+(isFinite(g)?g:'none')+'&food='+encodeURIComponent(food())+'&water='+(document.getElementById('water').getAttribute('aria-pressed')==='true'?1:0)+'&t='+Math.round((Date.now()-T0)/1000);location.href=(good?ok:bad)+q})})();
 </script></body></html>
